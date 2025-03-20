@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website! 🚀 This portfolio showcases my skills, projects, certifications, and professional experience in Computer Science and Information Technology.
 
 ## 🌐 Live Website
-Visit my portfolio: [Ntuthuko's Portfolio](https://ntuthukomaphalala.github.io/portfolio.github.io/)
+Visit my portfolio: [Ntuthuko's Portfolio](https://ntuthukomaphalala.github.io/portfolio/)
 
 ## 📌 About Me
 I am a passionate Data and IT professional with expertise in programming, cloud computing, data analysis, and automation. I specialize in leveraging technology to solve real-world problems and streamline operations.
