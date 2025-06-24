@@ -107,7 +107,10 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        <p>&copy; 2023/24 Ntuthuko's Portfolio</p>
+        <p>&copy; est. 2023 - <span id="year"></span></p>
+          <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+          </script>
       </div>
       <div class="credits">
       </div>
