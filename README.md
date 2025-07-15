@@ -30,6 +30,7 @@ A cybersecurity awareness website providing essential security tips.
 Developed and integrated smart automation solutions at ICFR, including irrigation system control and sensor monitoring.
 
 ## 📜 Certifications
+- FNB App Academy 2025 - Full-Stack Development
 - Microsoft Azure Cloud Computing Certification
 - Other relevant certifications listed on my portfolio
 
