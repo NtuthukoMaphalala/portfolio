@@ -9,12 +9,22 @@ Visit my portfolio: [Ntuthuko's Portfolio](https://ntuthukomaphalala.github.io/p
 I am a passionate Data and IT professional with expertise in programming, cloud computing, data analysis, and automation. I specialize in leveraging technology to solve real-world problems and streamline operations.
 
 ## 🛠️ Skills
-- **Programming:** Java, C++, Python, C#, R, SQL
-- **Web Development:** HTML, CSS, JavaScript
-- **Data Analysis:** R, SQL, Excel
-- **Cloud Computing:** Azure, Virtualization, Containerization
-- **Tools & Technologies:** Git, Home Assistant, SA-SAMS, Jupyter Notebook
-- **Operating Systems:** Windows, Ubuntu, MacOS
+
+- **Data Analysis**: SQL, Python, R, Microsoft Excel
+•
+Networking: Network Media, Protocols and Standards, Wireless Access, Network Types, Application Layer Services, IPv4 Addressing
+•
+Data Visualization: Power BI, Tableau, Excel Charts
+•
+Operating Systems: Windows 10 & 11, MacOS, and Ubuntu
+•
+Programming Languages & Frameworks: Python, Java, R, C++, C#, JavaScript, HTML, CSS
+•
+Tools and Platforms: Visual Studio Code, Eclipse, PowerApps, Power Automate, Microsoft Azure, GitHub, Jupyter Notebook, SharePoint, Node.js, React.js, Express.js, Git
+•
+Software Development: Full-Stack Web Development, RESTful API Design, Application Deployment, Agile & Best Practices
+•
+Soft Skills: Problem-solving, Communication, Attention to Detail, Team Collaboration, Adaptability
 
 ## 📂 Projects
 ### 🔹 [Fundanathi](https://fundanathi.com/)
