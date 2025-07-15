@@ -11,8 +11,7 @@ I am a passionate Data and IT professional with expertise in programming, cloud 
 ## 🛠️ Skills
 
 - **Data Analysis**: SQL, Python, R, Microsoft Excel
-•
-Networking: Network Media, Protocols and Standards, Wireless Access, Network Types, Application Layer Services, IPv4 Addressing
+- **Networking**: Network Media, Protocols and Standards, Wireless Access, Network Types, Application Layer Services, IPv4 Addressing
 •
 Data Visualization: Power BI, Tableau, Excel Charts
 •
