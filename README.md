@@ -12,18 +12,12 @@ I am a passionate Data and IT professional with expertise in programming, cloud 
 
 - **Data Analysis**: SQL, Python, R, Microsoft Excel
 - **Networking**: Network Media, Protocols and Standards, Wireless Access, Network Types, Application Layer Services, IPv4 Addressing
-•
-Data Visualization: Power BI, Tableau, Excel Charts
-•
-Operating Systems: Windows 10 & 11, MacOS, and Ubuntu
-•
-Programming Languages & Frameworks: Python, Java, R, C++, C#, JavaScript, HTML, CSS
-•
-Tools and Platforms: Visual Studio Code, Eclipse, PowerApps, Power Automate, Microsoft Azure, GitHub, Jupyter Notebook, SharePoint, Node.js, React.js, Express.js, Git
-•
-Software Development: Full-Stack Web Development, RESTful API Design, Application Deployment, Agile & Best Practices
-•
-Soft Skills: Problem-solving, Communication, Attention to Detail, Team Collaboration, Adaptability
+- **Data Visualization**: Power BI, Tableau, Excel Charts
+- **Operating Systems**: Windows 10 & 11, MacOS, and Ubuntu
+- **Programming Languages & Frameworks**: Python, Java, R, C++, C#, JavaScript, HTML, CSS
+- **Tools and Platforms**: Visual Studio Code, Eclipse, PowerApps, Power Automate, Microsoft Azure, GitHub, Jupyter Notebook, SharePoint, Node.js, React.js, Express.js, Git
+- **Software Development**: Full-Stack Web Development, RESTful API Design, Application Deployment, Agile & Best Practices
+- **Soft Skill**s: Problem-solving, Communication, Attention to Detail, Team Collaboration, Adaptability
 
 ## 📂 Projects
 ### 🔹 [Fundanathi](https://fundanathi.com/)
