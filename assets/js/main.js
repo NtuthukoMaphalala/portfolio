@@ -320,19 +320,24 @@ async function getWeatherByCoords(lat, lon) {
         const location = `📍 ${data.name}, ${data.sys.country}`;
         const temperature = `🌡️ ${Math.round(data.main.temp)}°C`;
         const description = `🌤️ ${data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1)}`;
+        const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        const iconAlt = data.weather[0].main;
 
-        // Display all info in one line, separated by commas
-        document.getElementById('location').textContent = `${location}, ${temperature}, ${description}`;
+        // Combine all info into one HTML line, with the icon inline
+        document.getElementById('location').innerHTML = `
+            ${location}, ${temperature}, ${iconAlt}
+            <img src="${iconUrl}" alt="${iconAlt}" style="vertical-align: middle; width: 40px; height: 40px;">
+        `;
 
-        // Show icon as before
-        document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        document.getElementById('weather-icon').alt = data.weather[0].main;
+        // Clear error
         document.getElementById('error-message').textContent = "";
+
     } catch (error) {
         console.error('Error fetching weather data:', error);
         showError('Failed to fetch weather data. Please try again later.');
     }
 }
+
 
 function getUserLocation() {
     if (navigator.geolocation) {
