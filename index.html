@@ -71,7 +71,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div id="weather-container">
-      <h2 id="greeting-message"><b>🌞 Good Morning/Afternoon/Evening, you look good today! 🌟</b></h2>
+      <h2 id="greeting-message"><b>🌞 Good Morning/Afternoon/Evening, you look good today!</b></h2>
       <div id="location"></div>
       <div id="temperature"></div>
       <div id="description"></div>
@@ -83,11 +83,11 @@
       // Set greeting message based on current time
       function setGreetingMessage() {
         const hour = new Date().getHours();
-        let greeting = "<b>🌙 Good Evening, you look good today! 🌟</b>";
+        let greeting = "<b>🌙 Good Evening, you look good today!</b>";
         if (hour >= 5 && hour < 12) {
-          greeting = "<b>🌞 Good Morning, you look good today! 🌟</b>";
+          greeting = "<b>🌞 Good Morning, you look good today!</b>";
         } else if (hour >= 12 && hour < 18) {
-          greeting = "<b>🌤️ Good Afternoon, you look good today! 🌟</b>";
+          greeting = "<b>🌤️ Good Afternoon, you look good today!</b>";
         }
         document.getElementById("greeting-message").innerHTML = greeting;
       }
