@@ -304,49 +304,56 @@ themeSwitchBtn.addEventListener("click", () => {
 });
 
 
+const apiKey = '07bf5d50456b5181632845cd6b13ad91'; //weather API key
 
-        const apiKey = '07bf5d50456b5181632845cd6b13ad91';
+function showError(message) {
+    const errorElement = document.getElementById('error-message');
+    errorElement.textContent = message;
+    errorElement.style.display = 'block';
+}
 
-        function showError(message) {
-            const errorElement = document.getElementById('error-message');
-            errorElement.textContent = message;
-            errorElement.style.display = 'block';
-        }
+async function getWeatherByCoords(lat, lon) {
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
+        const data = await response.json();
 
-        async function getWeatherByCoords(lat, lon) {
-            try {
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
-                const data = await response.json();
+        const location = `📍 ${data.name}, ${data.sys.country}`;
+        const temperature = `🌡️ ${Math.round(data.main.temp)}°C`;
+        const description = `🌤️ ${data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1)}`;
 
-                document.getElementById('location').textContent = data.name;
-                document.getElementById('temperature').textContent = `${Math.round(data.main.temp)}°C`;
-                document.getElementById('description').textContent = data.weather[0].description;
-                document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-            } catch (error) {
-                console.error('Error fetching weather data:', error);
-                showError('Failed to fetch weather data. Please try again later.');
+        // Display all info in one line, separated by commas
+        document.getElementById('location').textContent = `${location}, ${temperature}, ${description}`;
+
+        // Show icon as before
+        document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        document.getElementById('weather-icon').alt = data.weather[0].main;
+        document.getElementById('error-message').textContent = "";
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        showError('Failed to fetch weather data. Please try again later.');
+    }
+}
+
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                getWeatherByCoords(lat, lon);
+            },
+            (error) => {
+                console.error('Error getting user location:', error);
+                showError('Unable to get your location. Please enable location services and refresh the page.');
             }
-        }
+        );
+    } else {
+        showError('Geolocation is not supported by your browser.');
+    }
+}
 
-        function getUserLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        getWeatherByCoords(lat, lon);
-                    },
-                    (error) => {
-                        console.error('Error getting user location:', error);
-                        showError('Unable to get your location. Please enable location services and refresh the page.');
-                    }
-                );
-            } else {
-                showError('Geolocation is not supported by your browser.');
-            }
-        }
+getUserLocation();
 
-        getUserLocation();
     // Function to set rating
   let userRating = null;
 
