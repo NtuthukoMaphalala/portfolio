@@ -303,7 +303,6 @@ themeSwitchBtn.addEventListener("click", () => {
   body.classList.toggle("dark-theme");
 });
 
-
 const apiKey = '07bf5d50456b5181632845cd6b13ad91'; //weather API key
 
 function showError(message) {
@@ -313,31 +312,36 @@ function showError(message) {
 }
 
 async function getWeatherByCoords(lat, lon) {
-    try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
-        const data = await response.json();
+  try {
+    // 1. Fetch weather data
+    const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
+    const weatherData = await weatherResponse.json();
 
-        const location = `📍 ${data.name}, ${data.sys.country}`;
-        const temperature = `🌡️ ${Math.round(data.main.temp)}°C`;
-        const description = `🌤️ ${data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1)}`;
-        const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        const iconAlt = data.weather[0].main;
+    // 2. Fetch location info using Nominatim reverse geocoding
+    const locationResponse = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+    const locationData = await locationResponse.json();
 
-        // Combine all info into one HTML line, with the icon inline
-        document.getElementById('location').innerHTML = `
-            ${location}, ${temperature}, ${iconAlt}
-            <img src="${iconUrl}" alt="${iconAlt}" style="vertical-align: middle; width: 40px; height: 40px;">
-        `;
+    const suburb = locationData.address.suburb || locationData.address.neighbourhood || "";
+    const city = locationData.address.city || locationData.address.town || locationData.address.village || weatherData.name;
+    const countryCode = "ZA";  // Manually set to ZA as per your request
 
-        // Clear error
-        document.getElementById('error-message').textContent = "";
+    const location = `📍 ${suburb ? suburb + ', ' : ''}${city}, ${countryCode}`;
+    const temperature = `🌡️ ${Math.round(weatherData.main.temp)}°C`;
+    const description = `${weatherData.weather[0].description.charAt(0).toUpperCase() + weatherData.weather[0].description.slice(1)}`;
+    const iconUrl = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+    const iconAlt = weatherData.weather[0].main;
 
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-        showError('Failed to fetch weather data. Please try again later.');
-    }
+    document.getElementById('location').innerHTML = `
+      ${location}, ${temperature}, ${iconAlt}
+      <img src="${iconUrl}" alt="${iconAlt}" style="vertical-align: middle; width: 40px; height: 40px;">
+    `;
+
+    document.getElementById('error-message').textContent = "";
+  } catch (error) {
+    console.error('Error fetching weather or location data:', error);
+    showError('Failed to fetch weather/location data. Please try again later.');
+  }
 }
-
 
 function getUserLocation() {
     if (navigator.geolocation) {
