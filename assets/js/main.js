@@ -323,9 +323,9 @@ async function getWeatherByCoords(lat, lon) {
 
     const suburb = locationData.address.suburb || locationData.address.neighbourhood || "";
     const city = locationData.address.city || locationData.address.town || locationData.address.village || weatherData.name;
-    const countryCode = "ZA";  // Manually set to ZA as per your request
+    //const countryCode = "ZA";  // Manually set to ZA as per your request
 
-    const location = `📍 ${suburb ? suburb + ', ' : ''}${city}, ${countryCode}`;
+    const location = `📍 ${suburb ? suburb + ', ' : ''}${city}, ${weatherData.sys.country}`;
     const temperature = `🌡️ ${Math.round(weatherData.main.temp)}°C`;
     const description = `${weatherData.weather[0].description.charAt(0).toUpperCase() + weatherData.weather[0].description.slice(1)}`;
     const iconUrl = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
