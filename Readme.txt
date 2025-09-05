@@ -46,4 +46,4 @@ Hi there! I'm Ntuthuko Maphalala, a passionate Computer Science and IT graduate.
 
 - Email: ntuthukomaphalala4@gmail.com
 - LinkedIn: https://www.linkedin.com/in/ntuthukomaphalala
-- Portfolio Website: https://ntuthukomaphalala.github.io/Portfolio.github.io/
+- Portfolio Website: https://ntuthukomaphalala.github.io/portfolio/
